@@ -34,18 +34,20 @@ def add(self, x, y):
     try:
         logging.info("add()")
         logging.debug("===---===")
-        time.sleep(3)
+        time.sleep(10)
         logging.debug("===---===")
         print(random.randint(1, 9699))
-        random_v = random.randint(1, 20)
-        print(f'random_v = {random_v}')
-        if random_v > 17:
-            return x + y
-        else:
-            raise Exception("random_v < 8")
+        return x + y
+        # random_v = random.randint(1, 20)
+        # print(f'random_v = {random_v}')
+        # if random_v > 17:
+        #     return x + y
+        # else:
+        #     raise Exception("random_v < 8")
     except Exception as e:
         print(e)
         self.retry(exec=e, countdown=1)
+
 
 #  celery -A EventWorker worker -P solo -l debug -f logs/celery.log
 #  celery -A EventWorker worker -P solo -l info
