@@ -49,5 +49,7 @@ def add(self, x, y):
         self.retry(exec=e, countdown=1)
 
 
+
+
 #  celery -A EventWorker worker -P solo -l debug -f logs/celery.log
 #  celery -A EventWorker worker -P solo -l info
